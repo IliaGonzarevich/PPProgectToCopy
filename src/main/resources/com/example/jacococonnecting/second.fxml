@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="350.0" style="-fx-background-color: #dddddd;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jacococonnecting.SecondController">
+      <center>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="234.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
+                  <children>
+                        <VBox fx:id="hideVB" layoutX="22.0" layoutY="-4.0" prefHeight="485.0" prefWidth="307.0" style="-fx-border-color: red; -fx-border-width: 0; -fx-border-radius: 20; -fx-background-radius: 15;" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+                              <children>
+                                    <AnchorPane prefHeight="432.0" prefWidth="306.0" style="-fx-background-color: white; -fx-background-radius: 15 15 0 0; -fx-border-radius: 15 15 0 0; -fx-border-width: 1 1 0 1; -fx-border-color: grey;">
+                                          <children>
+                                                <Label fx:id="lblShow" alignment="CENTER" layoutX="99.0" layoutY="216.0" prefHeight="71.0" prefWidth="108.0" style="-fx-background-color: #dddddd; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: red;" text="Показать&#10;   ответ">
+                                                      <effect>
+                                                            <SepiaTone />
+                                                      </effect>
+                                                      <cursor>
+                                                            <Cursor fx:constant="DEFAULT" />
+                                                      </cursor></Label>
+                                                <AnchorPane layoutX="2.0" layoutY="1.0" prefHeight="88.0" prefWidth="302.0">
+                                                      <children>
+                                                            <Label fx:id="lblQ" layoutX="20.0" layoutY="23.0" prefHeight="62.0" prefWidth="270.0" text="Здесь должен быть вопрос&#10;&#10;" />
+                                                      </children></AnchorPane>
+                                                <Label fx:id="lblA" layoutX="18.0" layoutY="100.0" prefHeight="143.0" prefWidth="268.0" text="Label" />
+                        <AnchorPane layoutX="52.0" layoutY="8.0" prefHeight="200.0" prefWidth="250.0" />
+                                          </children></AnchorPane>
+                                    <HBox alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="300.0" style="-fx-background-radius: 0 0 20 20; -fx-border-radius: 20; -fx-background-color: white;">
+                                          <children>
+                                                <Label fx:id="lblY" prefHeight="51.0" prefWidth="154.0" style="-fx-border-width: 1 1 1 1; -fx-border-color: grey; -fx-background-color: white; -fx-background-radius: 0 0 0 20; -fx-border-radius: 0 0 0 20;" text="      Я знаю этот термин,&#10;      пропустить&#10;" />
+                                                <Label fx:id="lblN" prefHeight="51.0" prefWidth="152.0" style="-fx-background-color: white; -fx-background-radius: 0 0 20 0; -fx-border-radius: 0 0 20 0; -fx-border-width: 1 1 1 0; -fx-border-color: grey;" text="   Я не знаю этот термин,&#10;   учить" />
+                                          </children>
+                                    </HBox>
+                              </children>
+                        </VBox>
+                        <Separator fx:id="sep" layoutX="22.0" layoutY="85.0" prefHeight="4.0" prefWidth="306.0" />
+            <Label fx:id="variantlbl" layoutX="201.0" layoutY="4.0" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: grey; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: black;" />
+            <Label fx:id="lblShow2" layoutX="131.0" layoutY="388.0" prefHeight="28.0" prefWidth="92.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5;" text=" Показать ответ">
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.09814814478158951" green="0.9098148345947266" blue="1.0" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></Label>
+            <VBox fx:id="radiovertical" layoutX="40.0" layoutY="102.0" prefHeight="283.0" prefWidth="286.0" spacing="20.0">
+               <children>
+                  <RadioButton fx:id="radio1" mnemonicParsing="false" prefWidth="281.0">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radio2" mnemonicParsing="false" toggleGroup="$radioGroup" />
+                  <RadioButton fx:id="radio3" mnemonicParsing="false" text="RadioButton" toggleGroup="$radioGroup" />
+                  <RadioButton fx:id="radio4" mnemonicParsing="false" text="RadioButton" toggleGroup="$radioGroup" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <AnchorPane fx:id="results" layoutY="-40.0" prefHeight="550.0" prefWidth="350.0">
+               <children>
+                  <Label fx:id="resultlbl" prefHeight="550.0" prefWidth="350.0" />
+               </children>
+            </AnchorPane>
+                  </children>
+            </AnchorPane>
+      </center>
+      <top>
+            <AnchorPane fx:id="hideTop" prefHeight="40.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+                  <children>
+                        <ProgressBar fx:id="pbar" layoutX="22.0" layoutY="26.0" pickOnBounds="false" prefHeight="8.0" prefWidth="304.0" progress="0.0" />
+                        <Text fx:id="statistics" layoutX="42.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вы ответили правильно на 0 вопросов">
+                              <font>
+                                    <Font size="10.0" />
+                              </font>
+                        </Text>
+                        <Circle fx:id="cycle" fill="DODGERBLUE" layoutX="28.0" layoutY="15.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0;" />
+                  </children></AnchorPane>
+      </top>
+      <bottom>
+            <AnchorPane fx:id="hideBottom" prefHeight="29.0" prefWidth="350.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
+                  <children>
+                        <Label fx:id="labelHideA" layoutX="26.0" layoutY="6.0" prefHeight="12.0" prefWidth="270.0" text="Ну ладно, если прям не помнишь, посмотри уже" />
+                  </children>
+            </AnchorPane>
+      </bottom>
+      <effect>
+            <Bloom threshold="1.0" />
+      </effect>
+</BorderPane>
