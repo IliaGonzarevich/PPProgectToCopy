@@ -113,8 +113,7 @@ public class SecondController {
         String[] masN = new String[4];
 
         for (int i = 0; i<masN.length; i++){
-
-            System.out.println("работает");
+            
             n = random.nextInt(num);
 
 
