@@ -168,7 +168,7 @@ public class SecondController {
         lblN.setOnMouseExited(event -> changeBackground(lblN, "white", "20 0", "20 0", "0"));
 
         if (!radiovertical.isVisible()) {
-            System.out.println("Я в дефолте");
+   
             rand3();
 
             lblA.setVisible(false);
@@ -232,9 +232,9 @@ public class SecondController {
         }
 
         variantlbl.setOnMousePressed(mouseEvent -> {
-            System.out.println("Нажал выбор варианта");
+          
             if (radiovertical.isVisible()) {
-                System.out.println("Видимо, стало невидимым");
+                
                 radiovertical.setVisible(false);
                 lblShow2.setVisible(false);
                 lblShow.setVisible(true);
@@ -243,7 +243,7 @@ public class SecondController {
                 sep.setVisible(false);
 
                 lblShow.setOnMousePressed(enent -> {
-                    System.out.println("Я показал ответ");
+                    
                     sep.setVisible(true);
                     lblShow.setVisible(false);
                     lblA.setVisible(true);
@@ -252,7 +252,7 @@ public class SecondController {
 
 
                 lblY.setOnMousePressed(event -> {
-                    System.out.println("Я охренел");
+                   
 
                     rand2();
                     num--;
@@ -299,7 +299,7 @@ public class SecondController {
                 });
             }
             else{
-                System.out.println("Невидимо, стало видимым");
+                
                 sep.setVisible(true);
                 radiovertical.setVisible(true);
                 lblShow2.setVisible(true);
@@ -308,7 +308,7 @@ public class SecondController {
 
 
                 lblY.setOnMousePressed(event1 -> {
-                    System.out.println("При вариантах да!");
+                    
                     rand2();
                     num--;
 
@@ -331,7 +331,7 @@ public class SecondController {
                         }
                     });
                     lblN.setOnMousePressed(event3 -> {
-                        System.out.println("При вариантах нет!");
+                      
                         if (questions[n].isChoosen()) {
                             questions[n].setChoosen(false);
                             statistic++;
@@ -356,7 +356,7 @@ public class SecondController {
                     });
 
                 lblShow2.setOnMousePressed(event -> {
-                    System.out.println("Нажал на показать ответ при варантах");
+                   
                     RadioButton selectedRadio = (RadioButton) radioGroup.getSelectedToggle();
                     if (selectedRadio != null) {
                         String toggleGroupValue = selectedRadio.getText();
@@ -376,133 +376,4 @@ public class SecondController {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.AnchorPane;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-public class Controller {
-
-    @FXML
-    private Button clickThat;
-
-    @FXML
-    private AnchorPane anchor1;
-
-    @FXML
-    private AnchorPane anchor2;
-
-    @FXML
-    private Button button;
-
-    @FXML
-    private ToggleGroup radioGroup;
-
-    @FXML
-    private RadioButton radio1;
-
-    @FXML
-    private RadioButton radio2;
-
-    @FXML
-    Questions[] questions = new Questions[] {
-            new Questions("Логика - наука?", new String[] {"Да", "Нет"}),
-            new Questions("Политология наука?", new String[] {"Да", "Нет"})
-    };
-
-    private int nowQuestion = 0;
-    private int correctAnswer;
-
-    public int getNowQuestion() {
-        return nowQuestion;
-    }
-
-    @FXML
-    void initialize() {
-
-        anchor2.setVisible(false);
-        radio1.setText(questions[0].getAnswers()[1]);
-        radio2.setText(questions[0].getAnswers()[0]);
-        button.setText(questions[0].getQuestion());
-
-        button.setOnAction(event -> {
-            //нажали на кнопку
-
-            RadioButton selectedRadio = (RadioButton) radioGroup.getSelectedToggle();
-            if (selectedRadio != null) {
-                String toggleGroupValue = selectedRadio.getText();
-
-                if (toggleGroupValue.equals(questions[nowQuestion].correctAnswer())){
-                    correctAnswer++;
-                }
-
-                if(nowQuestion +1 != questions.length){
-                    nowQuestion++;
-
-                    button.setText(questions[nowQuestion].getQuestion());
-                    String[] answers = questions[nowQuestion].getAnswers();
-
-                    List<String> stringList = Arrays.asList(answers);
-                    Collections.shuffle(stringList);
-
-                    radio1.setText(stringList.get(0));
-                    radio2.setText(stringList.get(1));
-
-                    selectedRadio.setSelected(false);
-                } else{
-                    anchor1.setVisible(false);
-                    anchor2.setVisible(true);
-
-                }
-            }
-
-        });
-
-
-    }
-}*/
-
-/* @FXML
-    protected void onClick1(ActionEvent event) {
-        n++;
-        System.out.println("Вы нажали на кнопку "+n+" раз");
-
-    }*/
 
