@@ -40,7 +40,7 @@
                               </children>
                         </VBox>
                         <Separator fx:id="sep" layoutX="22.0" layoutY="85.0" prefHeight="4.0" prefWidth="306.0" />
-            <Label fx:id="variantlbl" layoutX="201.0" layoutY="4.0" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: grey; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: black;" />
+            <Label fx:id="variantLbl" layoutX="201.0" layoutY="4.0" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: grey; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: black;" />
             <Label fx:id="lblShow2" layoutX="131.0" layoutY="388.0" prefHeight="28.0" prefWidth="92.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5;" text=" Показать ответ">
                <effect>
                   <Lighting bumpInput="$null">
@@ -53,7 +53,7 @@
                      </light>
                   </Lighting>
                </effect></Label>
-            <VBox fx:id="radiovertical" layoutX="40.0" layoutY="102.0" prefHeight="283.0" prefWidth="286.0" spacing="20.0">
+            <VBox fx:id="radioVertical" layoutX="40.0" layoutY="102.0" prefHeight="283.0" prefWidth="286.0" spacing="20.0">
                <children>
                   <RadioButton fx:id="radio1" mnemonicParsing="false" prefWidth="281.0">
                      <toggleGroup>

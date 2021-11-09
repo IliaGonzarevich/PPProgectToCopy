@@ -14,10 +14,10 @@ public class SecondController {
     private Label lblShow2;
 
     @FXML
-    private Label variantlbl;
+    private Label variantLbl;
 
     @FXML
-    private VBox radiovertical;
+    private VBox radioVertical;
 
     @FXML
     private RadioButton radio1;
@@ -106,10 +106,8 @@ public class SecondController {
     private int statistic = 0;
     private int n;
 
-
-    Random random = new Random();
-
     void rand3() {
+        Random random = new Random();
         String[] masN = new String[4];
 
         for (int i = 0; i<masN.length; i++){
@@ -152,33 +150,33 @@ public class SecondController {
     @FXML
     void initialize() {
 
-        radiovertical.setVisible(false);
+        radioVertical.setVisible(false);
 
         lblShow2.setVisible(false);
 
         results.setVisible(false);
 
-        labelHideA.setOnMouseEntered(event -> labelHideA.setText("Ответ: " + questions[n].getAnswer()));        //обработка наведения на подсказку "показать ответ"
+        labelHideA.setOnMouseEntered(event -> labelHideA.setText("Ответ: " + questions[n].getAnswer()));
         labelHideA.setOnMouseExited(event -> labelHideA.setText("Ну ладно, если прям не помнишь, посмотри уже"));
 
-        lblY.setOnMouseEntered(event -> changeBackground(lblY, "green", "0 20", "0 20", "1"));       //обработка наведения на кнопку "я знаю"
+        lblY.setOnMouseEntered(event -> changeBackground(lblY, "green", "0 20", "0 20", "1"));
         lblY.setOnMouseExited(event -> changeBackground(lblY, "white", "0 20", "0 20", "1"));
 
-        lblN.setOnMouseEntered(event -> changeBackground(lblN, "grey", "20 0", "20 0", "0"));        //обработка наведения на кнопку "я не знаю"
+        lblN.setOnMouseEntered(event -> changeBackground(lblN, "grey", "20 0", "20 0", "0"));
         lblN.setOnMouseExited(event -> changeBackground(lblN, "white", "20 0", "20 0", "0"));
 
-        if (!radiovertical.isVisible()) {
+        if (!radioVertical.isVisible()) {
    
             rand3();
 
             lblA.setVisible(false);
             sep.setVisible(false);
 
-            lblShow.setOnMousePressed(enent -> {
+            lblShow.setOnMousePressed(show -> {
                 sep.setVisible(true);
                 lblShow.setVisible(false);
                 lblA.setVisible(true);
-                variantlbl.setVisible(false);
+                variantLbl.setVisible(false);
             });
 
 
@@ -192,7 +190,7 @@ public class SecondController {
                     hideTop.setVisible(false);
                     hideBottom.setVisible(false);
                     results.setVisible(true);
-                    variantlbl.setVisible(false);
+                    variantLbl.setVisible(false);
                     resultlbl.setText(Integer.toString(statistic));
                 } else {
                     sep.setVisible(false);
@@ -202,7 +200,7 @@ public class SecondController {
                     lblQ.setText(questions[n].getQuestion());
                     lblA.setVisible(false);
                     lblA.setText(questions[n].getAnswer());
-                    variantlbl.setVisible(true);
+                    variantLbl.setVisible(true);
                 }
             });
 
@@ -218,36 +216,36 @@ public class SecondController {
                     hideTop.setVisible(false);
                     hideBottom.setVisible(false);
                     results.setVisible(true);
-                    variantlbl.setVisible(false);
+                    variantLbl.setVisible(false);
                     resultlbl.setText(Integer.toString(statistic));
                 } else {
                     rand3();
                     sep.setVisible(false);
                     lblShow.setVisible(true);
                     lblA.setVisible(false);
-                    variantlbl.setVisible(true);
+                    variantLbl.setVisible(true);
                 }
 
             });
         }
 
-        variantlbl.setOnMousePressed(mouseEvent -> {
+        variantLbl.setOnMousePressed(mouseEvent -> {
           
-            if (radiovertical.isVisible()) {
+            if (radioVertical.isVisible()) {
                 
-                radiovertical.setVisible(false);
+                radioVertical.setVisible(false);
                 lblShow2.setVisible(false);
                 lblShow.setVisible(true);
 
                 lblA.setVisible(false);
                 sep.setVisible(false);
 
-                lblShow.setOnMousePressed(enent -> {
+                lblShow.setOnMousePressed(show2 -> {
                     
                     sep.setVisible(true);
                     lblShow.setVisible(false);
                     lblA.setVisible(true);
-                    variantlbl.setVisible(false);
+                    variantLbl.setVisible(false);
                 });
 
 
@@ -262,7 +260,7 @@ public class SecondController {
                         hideTop.setVisible(false);
                         hideBottom.setVisible(false);
                         results.setVisible(true);
-                        variantlbl.setVisible(false);
+                        variantLbl.setVisible(false);
                         resultlbl.setText(Integer.toString(statistic));
                     } else {
                         sep.setVisible(false);
@@ -270,7 +268,7 @@ public class SecondController {
                         rand3();
                         lblShow.setVisible(true);
                         lblA.setVisible(false);
-                        variantlbl.setVisible(true);
+                        variantLbl.setVisible(true);
                     }
                 });
 
@@ -286,14 +284,15 @@ public class SecondController {
                         hideTop.setVisible(false);
                         hideBottom.setVisible(false);
                         results.setVisible(true);
-                        variantlbl.setVisible(false);
+                        variantLbl.setVisible(false);
                         resultlbl.setText(Integer.toString(statistic));
                     } else {
                         rand3();
                         sep.setVisible(false);
                         lblShow.setVisible(true);
                         lblA.setVisible(false);
-                        variantlbl.setVisible(true);
+                        variantLbl.setVisible(true);
+                        lblShow2.setVisible(false);
                     }
 
                 });
@@ -301,7 +300,7 @@ public class SecondController {
             else{
                 
                 sep.setVisible(true);
-                radiovertical.setVisible(true);
+                radioVertical.setVisible(true);
                 lblShow2.setVisible(true);
                 lblShow.setVisible(false);
 
@@ -317,7 +316,7 @@ public class SecondController {
                             hideTop.setVisible(false);
                             hideBottom.setVisible(false);
                             results.setVisible(true);
-                            variantlbl.setVisible(false);
+                            variantLbl.setVisible(false);
                             resultlbl.setText(Integer.toString(statistic));
                         } else {
                             sep.setVisible(false);
@@ -325,8 +324,8 @@ public class SecondController {
                             lblShow.setVisible(true);
                             rand3();
                             lblA.setVisible(false);
-                            variantlbl.setVisible(true);
-                            radiovertical.setVisible(false);
+                            variantLbl.setVisible(true);
+                            radioVertical.setVisible(false);
                             lblShow2.setVisible(false);
                         }
                     });
@@ -342,15 +341,15 @@ public class SecondController {
                             hideTop.setVisible(false);
                             hideBottom.setVisible(false);
                             results.setVisible(true);
-                            variantlbl.setVisible(false);
+                            variantLbl.setVisible(false);
                             resultlbl.setText(Integer.toString(statistic));
                         } else {
                             rand3();
                             sep.setVisible(false);
                             lblShow.setVisible(true);
                             lblA.setVisible(false);
-                            variantlbl.setVisible(true);
-                            radiovertical.setVisible(false);
+                            variantLbl.setVisible(true);
+                            radioVertical.setVisible(false);
                             lblShow2.setVisible(false);
                         }
                     });
@@ -363,9 +362,9 @@ public class SecondController {
                         if (!Objects.equals(toggleGroupValue, lblA.getText())) {statistic++;}
                         sep.setVisible(true);
                         lblA.setVisible(true);
-                        radiovertical.setVisible(false);
+                        radioVertical.setVisible(false);
                         lblShow2.setVisible(false);
-                        variantlbl.setVisible(false);
+                        variantLbl.setVisible(false);
                         lblY.setVisible(true);
                         lblN.setVisible(true);
                     }
