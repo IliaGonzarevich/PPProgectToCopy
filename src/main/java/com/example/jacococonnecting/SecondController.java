@@ -108,15 +108,7 @@ public class SecondController {
     private int statistic = 0;
     private int n;
 
-    private Random random;
-
-    {
-        try {
-            random = SecureRandom.getInstanceStrong();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-    }
+    private Random random = new Random();
 
     void rand3() {
 
