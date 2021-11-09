@@ -120,13 +120,13 @@ public class SecondController {
              masN[i]=questions[n].getAnswer();
         }
 
-        int Num = 3;
+        int num1 = 3;
         for (int i = 0; i<masN.length; i++) {
             int k = random.nextInt(4);
             String obmen = masN[k];
-            masN[k] = masN[Num];
-            masN[Num] = obmen;
-            Num = k;
+            masN[k] = masN[num1];
+            masN[num1] = obmen;
+            num1 = k;
         }
 
         radio1.setText(masN[0]);
