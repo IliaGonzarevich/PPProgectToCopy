@@ -5,6 +5,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Objects;
 import java.util.Random;
 
@@ -47,7 +49,7 @@ public class SecondController {
     private AnchorPane results;
 
     @FXML
-    private Label resultlbl;
+    private Label resultLbl;
 
     @FXML
     private Separator sep;
@@ -71,7 +73,7 @@ public class SecondController {
     private Label labelHideA;
 
     @FXML
-    private ProgressBar pbar;
+    private ProgressBar pBar;
 
 
     Questions[] questions = new Questions[]{
@@ -98,16 +100,26 @@ public class SecondController {
     };
 
 
-    void changeBackground(Label lbl, String clr, String bckrad, String brad, String bwth) {
-        lbl.setStyle("-fx-background-color: " + clr + "; -fx-background-radius: 0 0 " + bckrad + "; -fx-border-radius: 0 0 " + brad + "; -fx-border-color: grey; -fx-border-width: 1 1 1 " + bwth + ";");
+    void changeBackground(Label lbl, String clr, String bckRad, String brad, String bWth) {
+        lbl.setStyle("-fx-background-color: " + clr + "; -fx-background-radius: 0 0 " + bckRad + "; -fx-border-radius: 0 0 " + brad + "; -fx-border-color: grey; -fx-border-width: 1 1 1 " + bWth + ";");
     }
 
     private int num = questions.length;
     private int statistic = 0;
     private int n;
 
+    private Random random;
+
+    {
+        try {
+            random = SecureRandom.getInstanceStrong();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
     void rand3() {
-        Random random = new Random();
+
         String[] masN = new String[4];
 
         for (int i = 0; i<masN.length; i++){
@@ -191,10 +203,10 @@ public class SecondController {
                     hideBottom.setVisible(false);
                     results.setVisible(true);
                     variantLbl.setVisible(false);
-                    resultlbl.setText(Integer.toString(statistic));
+                    resultLbl.setText(Integer.toString(statistic));
                 } else {
                     sep.setVisible(false);
-                    pbar.setProgress(pbar.getProgress() + 0.05);
+                    pBar.setProgress(pBar.getProgress() + 0.05);
                     rand3();
                     lblShow.setVisible(true);
                     lblQ.setText(questions[n].getQuestion());
@@ -217,7 +229,7 @@ public class SecondController {
                     hideBottom.setVisible(false);
                     results.setVisible(true);
                     variantLbl.setVisible(false);
-                    resultlbl.setText(Integer.toString(statistic));
+                    resultLbl.setText(Integer.toString(statistic));
                 } else {
                     rand3();
                     sep.setVisible(false);
@@ -261,10 +273,10 @@ public class SecondController {
                         hideBottom.setVisible(false);
                         results.setVisible(true);
                         variantLbl.setVisible(false);
-                        resultlbl.setText(Integer.toString(statistic));
+                        resultLbl.setText(Integer.toString(statistic));
                     } else {
                         sep.setVisible(false);
-                        pbar.setProgress(pbar.getProgress() + 0.05);
+                        pBar.setProgress(pBar.getProgress() + 0.05);
                         rand3();
                         lblShow.setVisible(true);
                         lblA.setVisible(false);
@@ -285,7 +297,7 @@ public class SecondController {
                         hideBottom.setVisible(false);
                         results.setVisible(true);
                         variantLbl.setVisible(false);
-                        resultlbl.setText(Integer.toString(statistic));
+                        resultLbl.setText(Integer.toString(statistic));
                     } else {
                         rand3();
                         sep.setVisible(false);
@@ -317,10 +329,10 @@ public class SecondController {
                             hideBottom.setVisible(false);
                             results.setVisible(true);
                             variantLbl.setVisible(false);
-                            resultlbl.setText(Integer.toString(statistic));
+                            resultLbl.setText(Integer.toString(statistic));
                         } else {
                             sep.setVisible(false);
-                            pbar.setProgress(pbar.getProgress() + 0.05);
+                            pBar.setProgress(pBar.getProgress() + 0.05);
                             lblShow.setVisible(true);
                             rand3();
                             lblA.setVisible(false);
@@ -342,7 +354,7 @@ public class SecondController {
                             hideBottom.setVisible(false);
                             results.setVisible(true);
                             variantLbl.setVisible(false);
-                            resultlbl.setText(Integer.toString(statistic));
+                            resultLbl.setText(Integer.toString(statistic));
                         } else {
                             rand3();
                             sep.setVisible(false);
