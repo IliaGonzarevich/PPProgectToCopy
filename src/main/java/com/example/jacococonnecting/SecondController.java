@@ -133,9 +133,9 @@ public class SecondController {
         int num1 = 3;
         for (int i = 0; i<masN.length; i++) {
             int k = random.nextInt(4);
-            String obmen = masN[k];
+            String obMen = masN[k];
             masN[k] = masN[num1];
-            masN[num1] = obmen;
+            masN[num1] = obMen;
             num1 = k;
         }
 
